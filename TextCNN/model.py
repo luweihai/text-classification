@@ -9,6 +9,7 @@ class TextCNN(nn.Module):
         # Embedding 层，加载预训练好的词向量
         self.embeddings = nn.Embedding(vocab_size, self.config.embed_size)
         self.embeddings.weight = nn.Parameter(word_embeddings, requires_grad=False)
+    #    self.embeddings = nn.Embedding.from_pretrained(word_embeddings, freeze=False)
 
         # 卷积层
         self.conv1 = nn.Sequential(
